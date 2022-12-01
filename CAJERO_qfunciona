@@ -1,0 +1,44 @@
+# cajero automatico
+#1 Ingresar.
+#2 Sacar.
+#3 SALIR.
+
+def muestra_menu():
+    #programa molon chachi piruli
+    print ("**********************************************")
+    print ("*                    MENU                    *")
+    print ("**********************************************")
+    print ("1. INGRESAR DINERO ")
+    print ("2. SACAR DINERO ")
+    print ("3. SALIR")
+    
+def ingresar_dinero(saldo):
+    dinero=int(input("Cuanto quieres ingresar:"))
+    saldo=saldo+dinero
+    return(saldo)
+
+def sacar_dinero(saldo):
+    sacar=int(input("cuanto quieres sacar? "))
+    if ((saldo-sacar) <0) :
+        print ("su saldo es inferior a la cantidad solicitada")
+ 
+    else:
+        saldo=saldo-sacar
+        print (str("tu saldo actual es de: ") + str(saldo))
+    return(saldo)
+
+def main():
+    saldo=0
+    seguir=True
+    while (seguir==True):
+        muestra_menu()
+        respuesta=int(input("Que deseas hacer: "))
+        if (respuesta==1):
+            saldo=ingresar_dinero(saldo)
+        if (respuesta==2):
+            saldo=sacar_dinero(saldo)
+        if (respuesta==3):
+            seguir=False
+            print (" MUCHAS GRACIAS POR SU SERVICIO")
+
+main()
